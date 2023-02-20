@@ -1,9 +1,9 @@
 package com.example.pekko
 
+import ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors
 import org.apache.pekko.actor.{ActorSystem, Props}
 import org.apache.pekko.http.scaladsl.Http
 import org.apache.pekko.http.scaladsl.server.RouteConcatenation
-//import ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors
 import com.example.pekko.add.{AddActor, AddService}
 import com.example.pekko.addoption.{AddOptionActor, AddOptionService}
 import com.example.pekko.echoenum.EchoEnumService
@@ -25,15 +25,14 @@ object Rest extends App with RouteConcatenation {
   val addOption = system.actorOf(Props[AddOptionActor])
   val hello = system.actorOf(Props[HelloActor])
 
-  //TODO add back CORS support
   val routes =
-    new AddService(add).route ~
+    cors()(new AddService(add).route ~
       new AddOptionService(addOption).route ~
       new HelloService(hello).route ~
       EchoEnumService.route ~
       EchoEnumeratumService.route ~
       EchoListService.route ~
-      SwaggerDocService.routes
+      SwaggerDocService.routes)
 
   val f = for {
     bindingFuture <- Http().newServerAt("0.0.0.0", 12345).bind(routes)
