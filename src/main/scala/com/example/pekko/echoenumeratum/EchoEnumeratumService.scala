@@ -1,5 +1,6 @@
 package com.example.pekko.echoenumeratum
 
+import com.github.pjfanning.enumeratum.EnumeratumModule
 import com.github.pjfanning.pekkohttpjackson.JacksonSupport
 import org.apache.pekko.http.scaladsl.server.{Directives, Route}
 import io.swagger.v3.oas.annotations.Operation
@@ -11,6 +12,8 @@ import jakarta.ws.rs.{Consumes, POST, Path, Produces}
 
 @Path("/echoenumeratum")
 object EchoEnumeratumService extends Directives with JacksonSupport {
+
+  JacksonSupport.defaultObjectMapper.registerModule(EnumeratumModule)
 
   case class EchoEnumeratum(enumValue: SizeEnum)
 
