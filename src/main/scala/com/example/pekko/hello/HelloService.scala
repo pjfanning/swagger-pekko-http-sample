@@ -4,25 +4,23 @@ import org.apache.pekko.actor.ActorRef
 import org.apache.pekko.http.scaladsl.server.{Directives, Route}
 import org.apache.pekko.pattern.ask
 import org.apache.pekko.util.Timeout
-import com.example.pekko.DefaultJsonFormats
 import com.example.pekko.hello.HelloActor._
+import com.github.pjfanning.pekkohttpjackson.JacksonSupport
 import io.swagger.v3.oas.annotations.enums.ParameterIn
 import io.swagger.v3.oas.annotations.media.{Content, Schema}
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.{Operation, Parameter}
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.{GET, Path, Produces}
-import spray.json.RootJsonFormat
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration.DurationInt
 
 @Path("/hello")
 class HelloService(hello: ActorRef)(implicit executionContext: ExecutionContext)
-  extends Directives with DefaultJsonFormats {
+  extends Directives with JacksonSupport {
 
   implicit val timeout: Timeout = Timeout(2.seconds)
-  implicit val greetingFormat: RootJsonFormat[Greeting] = jsonFormat1(Greeting)
 
   val route: Route =
     getHello ~

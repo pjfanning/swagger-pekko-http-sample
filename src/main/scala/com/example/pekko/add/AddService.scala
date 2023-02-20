@@ -4,27 +4,23 @@ import org.apache.pekko.actor.ActorRef
 import org.apache.pekko.http.scaladsl.server.{Directives, Route}
 import org.apache.pekko.pattern.ask
 import org.apache.pekko.util.Timeout
-import com.example.pekko.DefaultJsonFormats
 import com.example.pekko.add.AddActor._
+import com.github.pjfanning.pekkohttpjackson.JacksonSupport
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.media.{Content, Schema}
 import io.swagger.v3.oas.annotations.parameters.RequestBody
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.{Consumes, POST, Path, Produces}
-import spray.json.RootJsonFormat
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration.DurationInt
 
 @Path("/add")
 class AddService(addActor: ActorRef)(implicit executionContext: ExecutionContext)
-  extends Directives with DefaultJsonFormats {
+  extends Directives with JacksonSupport {
 
   implicit val timeout: Timeout = Timeout(2.seconds)
-
-  implicit val requestFormat: RootJsonFormat[AddRequest] = jsonFormat1(AddRequest)
-  implicit val responseFormat: RootJsonFormat[AddResponse] = jsonFormat1(AddResponse)
 
   val route: Route = add
 

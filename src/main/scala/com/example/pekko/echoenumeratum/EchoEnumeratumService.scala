@@ -1,6 +1,6 @@
 package com.example.pekko.echoenumeratum
 
-import org.apache.pekko.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
+import com.github.pjfanning.pekkohttpjackson.JacksonSupport
 import org.apache.pekko.http.scaladsl.server.{Directives, Route}
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.media.{Content, Schema}
@@ -8,16 +8,11 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.{Consumes, POST, Path, Produces}
-import pl.iterators.kebs.json.{KebsEnumFormats, KebsSpray}
-import spray.json.{DefaultJsonProtocol, RootJsonFormat}
 
 @Path("/echoenumeratum")
-object EchoEnumeratumService extends Directives with SprayJsonSupport with DefaultJsonProtocol
-  with KebsSpray with KebsEnumFormats {
+object EchoEnumeratumService extends Directives with JacksonSupport {
 
   case class EchoEnumeratum(enumValue: SizeEnum)
-
-  implicit val echoEnumeratumFormat: RootJsonFormat[EchoEnumeratum] = jsonFormatN[EchoEnumeratum]
 
   val route: Route = echo
 

@@ -1,22 +1,18 @@
 package com.example.pekko.echolist
 
+import com.github.pjfanning.pekkohttpjackson.JacksonSupport
 import org.apache.pekko.http.scaladsl.server.{Directives, Route}
-import com.example.pekko.DefaultJsonFormats
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.media.{Content, Schema}
 import io.swagger.v3.oas.annotations.parameters.RequestBody
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.{Consumes, POST, Path, Produces}
-import pl.iterators.kebs.json.KebsSpray
-import spray.json.RootJsonFormat
 
 @Path("/echolist")
-object EchoListService extends Directives with DefaultJsonFormats with KebsSpray {
+object EchoListService extends Directives with JacksonSupport {
 
   case class EchoList(listName: String, values: Seq[String])
-
-  implicit val echoListFormat: RootJsonFormat[EchoList] = jsonFormatN[EchoList]
 
   val route: Route = echo
 
