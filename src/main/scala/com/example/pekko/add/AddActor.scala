@@ -1,6 +1,6 @@
-package com.example.akka.add
+package com.example.pekko.add
 
-import akka.actor.Actor
+import org.apache.pekko.actor.Actor
 
 object AddActor {
   case class AddRequest(numbers: Array[Int])

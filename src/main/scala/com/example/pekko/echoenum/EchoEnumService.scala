@@ -1,7 +1,7 @@
-package com.example.akka.echoenum
+package com.example.pekko.echoenum
 
-import akka.http.scaladsl.server.{Directives, Route}
-import com.example.akka.DefaultJsonFormats
+import org.apache.pekko.http.scaladsl.server.{Directives, Route}
+import com.example.pekko.DefaultJsonFormats
 import com.fasterxml.jackson.core.`type`.TypeReference
 import com.fasterxml.jackson.module.scala.JsonScalaEnumeration
 import io.swagger.v3.oas.annotations.Operation

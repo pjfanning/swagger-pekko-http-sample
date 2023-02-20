@@ -1,11 +1,11 @@
-package com.example.akka.addoption
+package com.example.pekko.addoption
 
-import akka.actor.ActorRef
-import akka.http.scaladsl.server.{Directives, Route}
-import akka.pattern.ask
-import akka.util.Timeout
-import com.example.akka.DefaultJsonFormats
-import com.example.akka.addoption.AddOptionActor._
+import org.apache.pekko.actor.ActorRef
+import org.apache.pekko.http.scaladsl.server.{Directives, Route}
+import org.apache.pekko.pattern.ask
+import org.apache.pekko.util.Timeout
+import com.example.pekko.DefaultJsonFormats
+import com.example.pekko.addoption.AddOptionActor._
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.media.{Content, Schema}
 import io.swagger.v3.oas.annotations.parameters.RequestBody

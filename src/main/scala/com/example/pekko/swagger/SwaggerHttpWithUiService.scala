@@ -1,7 +1,7 @@
-package com.example.akka.swagger
+package com.example.pekko.swagger
 
-import akka.http.scaladsl.model.StatusCodes.PermanentRedirect
-import com.github.swagger.akka.SwaggerHttpService
+import org.apache.pekko.http.scaladsl.model.StatusCodes.PermanentRedirect
+import com.github.swagger.pekko.SwaggerHttpService
 
 /**
  * SwaggerHttpService along with swagger-ui.

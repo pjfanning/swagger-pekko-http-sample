@@ -1,4 +1,4 @@
-package com.example.akka.echoenumeratum
+package com.example.pekko.echoenumeratum
 
 import enumeratum.{Enum, EnumEntry}
 

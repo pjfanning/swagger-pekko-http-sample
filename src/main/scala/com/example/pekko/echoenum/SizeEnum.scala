@@ -1,4 +1,4 @@
-package com.example.akka.echoenum
+package com.example.pekko.echoenum
 
 case object SizeEnum extends Enumeration(0) {
   type Enum = Value

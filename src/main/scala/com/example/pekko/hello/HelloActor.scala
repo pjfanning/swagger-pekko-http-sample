@@ -1,6 +1,6 @@
-package com.example.akka.hello
+package com.example.pekko.hello
 
-import akka.actor.{Actor, ActorLogging}
+import org.apache.pekko.actor.{Actor, ActorLogging}
 
 object HelloActor {
   case object AnonymousHello

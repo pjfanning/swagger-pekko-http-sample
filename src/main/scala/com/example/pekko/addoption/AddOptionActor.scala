@@ -1,6 +1,6 @@
-package com.example.akka.addoption
+package com.example.pekko.addoption
 
-import akka.actor.Actor
+import org.apache.pekko.actor.Actor
 import io.swagger.v3.oas.annotations.media.Schema
 
 object AddOptionActor {

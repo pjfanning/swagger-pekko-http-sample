@@ -1,18 +1,18 @@
-package com.example.akka.swagger
+package com.example.pekko.swagger
 
-import com.github.swagger.akka.model.Info
-import com.example.akka.add.AddService
-import com.example.akka.addoption.AddOptionService
-import com.example.akka.echoenum.EchoEnumService
-import com.example.akka.echoenumeratum.EchoEnumeratumService
-import com.example.akka.echolist.EchoListService
-import com.example.akka.hello.HelloService
+import com.github.swagger.pekko.model.Info
+import com.example.pekko.add.AddService
+import com.example.pekko.addoption.AddOptionService
+import com.example.pekko.echoenum.EchoEnumService
+import com.example.pekko.echoenumeratum.EchoEnumeratumService
+import com.example.pekko.echolist.EchoListService
+import com.example.pekko.hello.HelloService
 import io.swagger.v3.oas.models.ExternalDocumentation
 
 /**
  * Sample SwaggerDocService, replace values with those applicable your application.
  * By default, a swagger UI is made available too on the default routes. If you don't need the UI, or want
- * to load the UI in another way, replace [[SwaggerHttpWithUiService]] with [[com.github.swagger.akka.SwaggerHttpService]]
+ * to load the UI in another way, replace [[SwaggerHttpWithUiService]] with [[com.github.swagger.pekko.SwaggerHttpService]]
  */
 object SwaggerDocService extends SwaggerHttpWithUiService {
   override val apiClasses = Set(classOf[AddService], classOf[AddOptionService], classOf[HelloService],

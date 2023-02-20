@@ -1,9 +1,9 @@
-package com.example.akka
+package com.example.pekko
 
 import scala.reflect.ClassTag
 import spray.json._
-import akka.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
-import akka.http.scaladsl.model.{HttpEntity, StatusCode}
+import org.apache.pekko.http.scaladsl.marshallers.sprayjson.SprayJsonSupport
+import org.apache.pekko.http.scaladsl.model.{HttpEntity, StatusCode}
 
 /**
  * Holds potential error response with the HTTP status and optional body

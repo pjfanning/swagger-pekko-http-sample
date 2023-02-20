@@ -1,7 +1,7 @@
-package com.example.akka.echolist
+package com.example.pekko.echolist
 
-import akka.http.scaladsl.server.{Directives, Route}
-import com.example.akka.DefaultJsonFormats
+import org.apache.pekko.http.scaladsl.server.{Directives, Route}
+import com.example.pekko.DefaultJsonFormats
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.media.{Content, Schema}
 import io.swagger.v3.oas.annotations.parameters.RequestBody
