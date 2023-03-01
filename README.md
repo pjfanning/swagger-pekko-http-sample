@@ -2,7 +2,7 @@
 
 Clone this git repo and use `sbt run` to start the Akka Http server.
 
-Uses [swagger-akka-http](https://github.com/swagger-akka-http/swagger-pekko-http) which is built using [swagger.io](https://swagger.io/) libs.   
+Uses [swagger-pekko-http](https://github.com/swagger-akka-http/swagger-pekko-http) which is built using [swagger.io](https://swagger.io/) libs.   
 
 Test using the Swagger UI at http://localhost:12345/api-docs. You can view the swagger doc itself at http://localhost:12345/api-docs/swagger.json and  http://localhost:12345/api-docs/swagger.yaml.
 
