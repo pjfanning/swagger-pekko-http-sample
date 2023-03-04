@@ -3,7 +3,7 @@ name := "swagger-pekko-http-sample"
 scalaVersion := "2.13.10"
 
 val pekkoVersion = "0.0.0+26592-864ee821-SNAPSHOT"
-val pekkoHttpVersion = "0.0.0+4285-5b5b6ff7-SNAPSHOT"
+val pekkoHttpVersion = "0.0.0+4284-374ff95e-SNAPSHOT"
 val jacksonVersion = "2.14.2"
 val swaggerVersion = "2.2.8"
 
@@ -26,6 +26,6 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor" % pekkoVersion,
   "org.apache.pekko" %% "pekko-stream" % pekkoVersion,
   "org.apache.pekko" %% "pekko-slf4j" % pekkoVersion,
-  //"ch.megard" %% "akka-http-cors" % "1.1.3",
+  "ch.megard" %% "pekko-http-cors" % "0.0.0-SNAPSHOT",
   "org.slf4j" % "slf4j-simple" % "2.0.6"
 ) ++ swaggerDependencies
