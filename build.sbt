@@ -16,7 +16,6 @@ val swaggerDependencies = Seq(
   "com.github.swagger-akka-http" %% "swagger-pekko-http" % "2.10.0+13-ec2a1564-SNAPSHOT",
   "com.github.swagger-akka-http" %% "swagger-scala-module" % "2.9.0",
   "com.github.swagger-akka-http" %% "swagger-enumeratum-module" % "2.6.1",
-  "ch.megard" %% "pekko-http-cors" % "0.0.0-SNAPSHOT",
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
   "com.github.pjfanning" %% "jackson-module-enumeratum" % "2.14.1",
   "io.swagger.core.v3" % "swagger-jaxrs2-jakarta" % swaggerVersion
@@ -28,5 +27,6 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-actor" % pekkoVersion,
   "org.apache.pekko" %% "pekko-stream" % pekkoVersion,
   "org.apache.pekko" %% "pekko-slf4j" % pekkoVersion,
+  "ch.megard" %% "pekko-http-cors" % "0.0.0-SNAPSHOT",
   "org.slf4j" % "slf4j-simple" % "2.0.6"
 ) ++ swaggerDependencies
