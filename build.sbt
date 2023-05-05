@@ -13,7 +13,7 @@ resolvers += "Apache Snapshots" at "https://repository.apache.org/content/groups
 val swaggerDependencies = Seq(
   "jakarta.ws.rs" % "jakarta.ws.rs-api" % "3.0.0",
   "com.github.swagger-akka-http" %% "swagger-pekko-http" % "2.10.0+13-ec2a1564-SNAPSHOT",
-  "com.github.swagger-akka-http" %% "swagger-scala-module" % "2.9.0",
+  "com.github.swagger-akka-http" %% "swagger-scala-module" % "2.9.1",
   "com.github.swagger-akka-http" %% "swagger-enumeratum-module" % "2.6.1",
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
   "io.swagger.core.v3" % "swagger-jaxrs2-jakarta" % swaggerVersion
