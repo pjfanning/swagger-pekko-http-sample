@@ -27,5 +27,5 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-stream" % pekkoVersion,
   "org.apache.pekko" %% "pekko-slf4j" % pekkoVersion,
   "ch.megard" %% "pekko-http-cors" % "0.0.0-SNAPSHOT",
-  "org.slf4j" % "slf4j-simple" % "2.0.6"
+  "org.slf4j" % "slf4j-simple" % "2.0.7"
 ) ++ swaggerDependencies
