@@ -1,11 +1,11 @@
 name := "swagger-pekko-http-sample"
 
-scalaVersion := "2.13.11"
+scalaVersion := "2.13.12"
 
 val pekkoVersion = "1.0.1"
 val pekkoHttpVersion = "1.0.0"
-val jacksonVersion = "2.15.2"
-val swaggerVersion = "2.2.15"
+val jacksonVersion = "2.15.3"
+val swaggerVersion = "2.2.18"
 
 //resolvers ++= Resolver.sonatypeOssRepos("snapshots")
 //resolvers += "Apache Snapshots" at "https://repository.apache.org/content/groups/snapshots"
@@ -20,12 +20,12 @@ val swaggerDependencies = Seq(
 )
 
 libraryDependencies ++= Seq(
-  "pl.iterators" %% "kebs-spray-json" % "1.9.5",
+  "pl.iterators" %% "kebs-spray-json" % "1.9.6",
   "org.apache.pekko" %% "pekko-http" % pekkoHttpVersion,
   "org.apache.pekko" %% "pekko-http-spray-json" % pekkoHttpVersion,
   "org.apache.pekko" %% "pekko-http-cors" % pekkoHttpVersion,
   "org.apache.pekko" %% "pekko-actor" % pekkoVersion,
   "org.apache.pekko" %% "pekko-stream" % pekkoVersion,
   "org.apache.pekko" %% "pekko-slf4j" % pekkoVersion,
-  "org.slf4j" % "slf4j-simple" % "2.0.7"
+  "org.slf4j" % "slf4j-simple" % "2.0.9"
 ) ++ swaggerDependencies
