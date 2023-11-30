@@ -4,17 +4,17 @@ scalaVersion := "2.13.12"
 
 val pekkoVersion = "1.0.1"
 val pekkoHttpVersion = "1.0.0"
-val jacksonVersion = "2.15.3"
-val swaggerVersion = "2.2.18"
+val jacksonVersion = "2.16.0"
+val swaggerVersion = "2.2.19"
 
 //resolvers ++= Resolver.sonatypeOssRepos("snapshots")
 //resolvers += "Apache Snapshots" at "https://repository.apache.org/content/groups/snapshots"
 
 val swaggerDependencies = Seq(
   "jakarta.ws.rs" % "jakarta.ws.rs-api" % "3.0.0",
-  "com.github.swagger-akka-http" %% "swagger-pekko-http" % "2.11.0",
-  "com.github.swagger-akka-http" %% "swagger-scala-module" % "2.11.0",
-  "com.github.swagger-akka-http" %% "swagger-enumeratum-module" % "2.8.0",
+  "com.github.swagger-akka-http" %% "swagger-pekko-http" % "2.12.0",
+  "com.github.swagger-akka-http" %% "swagger-scala-module" % "2.12.0",
+  "com.github.swagger-akka-http" %% "swagger-enumeratum-module" % "2.9.0",
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
   "io.swagger.core.v3" % "swagger-jaxrs2-jakarta" % swaggerVersion
 )
