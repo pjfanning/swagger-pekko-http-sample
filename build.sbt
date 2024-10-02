@@ -5,7 +5,7 @@ scalaVersion := "2.13.15"
 val pekkoVersion = "1.1.1"
 val pekkoHttpVersion = "1.1.0"
 val jacksonVersion = "2.18.0"
-val swaggerVersion = "2.2.24"
+val swaggerVersion = "2.2.25"
 
 //resolvers ++= Resolver.sonatypeOssRepos("snapshots")
 //resolvers += "Apache Snapshots" at "https://repository.apache.org/content/groups/snapshots"
