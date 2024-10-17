@@ -22,7 +22,7 @@ class HelloService(hello: ActorRef)(implicit executionContext: ExecutionContext)
   extends Directives with DefaultJsonFormats {
 
   implicit val timeout: Timeout = Timeout(2.seconds)
-  implicit val greetingFormat: RootJsonFormat[Greeting] = jsonFormat1(Greeting)
+  implicit val greetingFormat: RootJsonFormat[Greeting] = jsonFormat1(Greeting.apply)
 
   val route: Route =
     getHello ~

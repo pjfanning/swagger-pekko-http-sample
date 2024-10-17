@@ -8,11 +8,11 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.{Consumes, POST, Path, Produces}
-import pl.iterators.kebs.json.KebsSpray
+import pl.iterators.kebs.sprayjson.KebsSprayJson
 import spray.json.RootJsonFormat
 
 @Path("/echolist")
-object EchoListService extends Directives with DefaultJsonFormats with KebsSpray {
+object EchoListService extends Directives with DefaultJsonFormats with KebsSprayJson {
 
   case class EchoList(listName: String, values: Seq[String])
 
