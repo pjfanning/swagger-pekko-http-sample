@@ -22,8 +22,6 @@ val swaggerDependencies = Seq(
 )
 
 libraryDependencies ++= Seq(
-  "pl.iterators" %% "kebs-spray-json" % kebsVersion,
-  "pl.iterators" %% "kebs-enumeratum" % kebsVersion,
   "org.apache.pekko" %% "pekko-http" % pekkoHttpVersion,
   "org.apache.pekko" %% "pekko-http-spray-json" % pekkoHttpVersion,
   "org.apache.pekko" %% "pekko-http-cors" % pekkoHttpVersion,
@@ -31,4 +29,4 @@ libraryDependencies ++= Seq(
   "org.apache.pekko" %% "pekko-stream" % pekkoVersion,
   "org.apache.pekko" %% "pekko-slf4j" % pekkoVersion,
   "org.slf4j" % "slf4j-simple" % slf4jVersion
-) ++ swaggerDependencies
+) // ++ swaggerDependencies
