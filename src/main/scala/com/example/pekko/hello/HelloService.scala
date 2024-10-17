@@ -20,9 +20,7 @@ class HelloService(hello: ActorRef)(implicit executionContext: ExecutionContext)
   implicit val timeout: Timeout = Timeout(2.seconds)
   implicit val greetingFormat: RootJsonFormat[Greeting] = jsonFormat1(Greeting.apply)
 
-  val route: Route =
-    getHello ~
-    getHelloSegment
+  val route: Route = getHello
 
   def getHello: Route =
     path("hello") {
@@ -37,13 +35,6 @@ class HelloService(hello: ActorRef)(implicit executionContext: ExecutionContext)
             logger.error("Hello call failed", t)
             throw t
         }
-      }
-    }
-
-  def getHelloSegment: Route =
-    path("hello" / Segment) { name =>
-      get {
-        complete { (hello ? Hello(name)).mapTo[Greeting] }
       }
     }
 }
