@@ -19,6 +19,6 @@ class AddOptionActor extends Actor {
 
   def receive: Receive = {
     case request: AddOptionRequest =>
-      sender ! AddOptionResponse(request.number + request.number2.getOrElse(0))
+      sender() ! AddOptionResponse(request.number + request.number2.getOrElse(0))
   }
 }

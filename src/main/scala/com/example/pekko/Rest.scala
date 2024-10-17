@@ -21,9 +21,9 @@ object Rest extends App with RouteConcatenation {
 
   implicit val executionContext: ExecutionContextExecutor = system.dispatcher
 
-  val add = system.actorOf(Props[AddActor])
-  val addOption = system.actorOf(Props[AddOptionActor])
-  val hello = system.actorOf(Props[HelloActor])
+  val add = system.actorOf(Props[AddActor]())
+  val addOption = system.actorOf(Props[AddOptionActor]())
+  val hello = system.actorOf(Props[HelloActor]())
 
   val routes =
     cors()(new AddService(add).route ~

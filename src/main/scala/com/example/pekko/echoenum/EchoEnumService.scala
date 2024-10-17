@@ -30,7 +30,7 @@ object EchoEnumService extends Directives with DefaultJsonFormats {
         }
       }
     }
-  implicit val echoEnumFormat: RootJsonFormat[EchoEnum] = jsonFormat1(EchoEnum)
+  implicit val echoEnumFormat: RootJsonFormat[EchoEnum] = jsonFormat1(EchoEnum.apply)
 
   val route: Route = echo
 

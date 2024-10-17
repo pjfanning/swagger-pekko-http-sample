@@ -23,8 +23,8 @@ class AddService(addActor: ActorRef)(implicit executionContext: ExecutionContext
 
   implicit val timeout: Timeout = Timeout(2.seconds)
 
-  implicit val requestFormat: RootJsonFormat[AddRequest] = jsonFormat1(AddRequest)
-  implicit val responseFormat: RootJsonFormat[AddResponse] = jsonFormat1(AddResponse)
+  implicit val requestFormat: RootJsonFormat[AddRequest] = jsonFormat1(AddRequest.apply)
+  implicit val responseFormat: RootJsonFormat[AddResponse] = jsonFormat1(AddResponse.apply)
 
   val route: Route = add
 
