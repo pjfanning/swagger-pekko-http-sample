@@ -25,14 +25,16 @@ object Rest extends App with RouteConcatenation {
   val addOption = system.actorOf(Props[AddOptionActor]())
   val hello = system.actorOf(Props[HelloActor]())
 
-  val routes =
-    cors()(new AddService(add).route ~
+  val routes = {
+    val serviceRoutes = new AddService(add).route ~
       new AddOptionService(addOption).route ~
       new HelloService(hello).route ~
       EchoEnumService.route ~
       EchoEnumeratumService.route ~
       EchoListService.route ~
-      SwaggerDocService.routes)
+      SwaggerDocService.routes
+    cors()(serviceRoutes)
+  }
 
   val f = for {
     bindingFuture <- Http().newServerAt("0.0.0.0", 12345).bind(routes)
