@@ -1,13 +1,13 @@
 name := "swagger-pekko-http-sample"
 
-scalaVersion := "3.3.4"
+scalaVersion := "3.3.6"
 
 val pekkoVersion = "1.1.3"
-val pekkoHttpVersion = "1.1.0"
-val jacksonVersion = "2.18.2"
-val swaggerVersion = "2.2.27"
-val kebsVersion = "2.0.0"
-val slf4jVersion = "2.0.16"
+val pekkoHttpVersion = "1.2.0"
+val jacksonVersion = "2.18.4"
+val swaggerVersion = "2.2.30"
+val kebsVersion = "2.1.1"
+val slf4jVersion = "2.0.17"
 
 //resolvers ++= Resolver.sonatypeOssRepos("snapshots")
 //resolvers += "Apache Snapshots" at "https://repository.apache.org/content/groups/snapshots"
