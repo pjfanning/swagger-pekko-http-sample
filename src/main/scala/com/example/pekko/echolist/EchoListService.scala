@@ -11,10 +11,10 @@ import jakarta.ws.rs.{Consumes, POST, Path, Produces}
 import pl.iterators.kebs.sprayjson.KebsSprayJson
 import spray.json.RootJsonFormat
 
+case class EchoList(listName: String, values: Seq[String])
+
 @Path("/echolist")
 object EchoListService extends Directives with DefaultJsonFormats with KebsSprayJson {
-
-  case class EchoList(listName: String, values: Seq[String])
 
   implicit val echoListFormat: RootJsonFormat[EchoList] = jsonFormatN[EchoList]
 

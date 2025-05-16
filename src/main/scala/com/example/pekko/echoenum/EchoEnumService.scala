@@ -12,13 +12,13 @@ import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.{Consumes, POST, Path, Produces}
 import spray.json.{DeserializationException, JsString, JsValue, RootJsonFormat}
 
+//case class EchoEnum(@Schema(required = true, `type` = "string", allowableValues = Array("TALL", "GRANDE", "VENTI"))
+//                    enumValue: SizeEnum.Value)
+private class SizeEnumTypeClass extends TypeReference[SizeEnum.type]
+case class EchoEnum(@JsonScalaEnumeration(classOf[SizeEnumTypeClass]) enumValue: SizeEnum.Value)
+
 @Path("/echoenum")
 object EchoEnumService extends Directives with DefaultJsonFormats {
-
-  //case class EchoEnum(@Schema(required = true, `type` = "string", allowableValues = Array("TALL", "GRANDE", "VENTI"))
-  //                    enumValue: SizeEnum.Value)
-  class SizeEnumTypeClass extends TypeReference[SizeEnum.type]
-  case class EchoEnum(@JsonScalaEnumeration(classOf[SizeEnumTypeClass]) enumValue: SizeEnum.Value)
 
   implicit val enumFormat: RootJsonFormat[SizeEnum.Value] =
     new RootJsonFormat[SizeEnum.Value] {

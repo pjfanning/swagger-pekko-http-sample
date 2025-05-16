@@ -12,11 +12,11 @@ import pl.iterators.kebs.enumeratum.KebsEnumeratum
 import pl.iterators.kebs.sprayjson.{KebsSprayJson, KebsSprayJsonEnums}
 import spray.json.{DefaultJsonProtocol, RootJsonFormat}
 
+case class EchoEnumeratum(enumValue: SizeEnum)
+
 @Path("/echoenumeratum")
 object EchoEnumeratumService extends Directives with SprayJsonSupport with DefaultJsonProtocol
   with KebsSprayJson with KebsSprayJsonEnums with KebsEnumeratum {
-
-  case class EchoEnumeratum(enumValue: SizeEnum)
 
   implicit val echoEnumeratumFormat: RootJsonFormat[EchoEnumeratum] = jsonFormatN[EchoEnumeratum]
 
