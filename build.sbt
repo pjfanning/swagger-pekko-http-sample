@@ -2,10 +2,10 @@ name := "swagger-pekko-http-sample"
 
 scalaVersion := "3.3.7"
 
-val pekkoVersion = "1.2.1"
+val pekkoVersion = "1.4.0"
 val pekkoHttpVersion = "1.3.0"
-val jacksonVersion = "2.20.0"
-val swaggerVersion = "2.2.39"
+val jacksonVersion = "2.21.1"
+val swaggerVersion = "2.2.45"
 val kebsVersion = "2.1.1"
 val slf4jVersion = "2.0.17"
 
@@ -14,9 +14,9 @@ val slf4jVersion = "2.0.17"
 
 val swaggerDependencies = Seq(
   "jakarta.ws.rs" % "jakarta.ws.rs-api" % "3.0.0",
-  "com.github.swagger-akka-http" %% "swagger-pekko-http" % "2.14.0",
-  "com.github.swagger-akka-http" %% "swagger-scala-module" % "2.14.0",
-  "com.github.swagger-akka-http" %% "swagger-enumeratum-module" % "2.10.0",
+  "com.github.swagger-akka-http" %% "swagger-pekko-http" % "2.15.0",
+  "com.github.swagger-akka-http" %% "swagger-scala-module" % "2.15.0",
+  "com.github.swagger-akka-http" %% "swagger-enumeratum-module" % "2.11.0",
   "com.fasterxml.jackson.module" %% "jackson-module-scala" % jacksonVersion,
   "io.swagger.core.v3" % "swagger-jaxrs2-jakarta" % swaggerVersion
 )
